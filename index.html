@@ -1,32 +1,286 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Título de la página</title>
-</head>
-<body>
-  <h1>Hola, mundo</h1     
-  <h2>Cynthia Villarreal</h2>
-  <p>Este es el contenido visible de la página.</p>
-</body>
-  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cynthia Informática | Stradivarius Style</title>
     <style>
+        /* Reset y Estilos Globales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
         body {
-            background-color: #ff69b4;
+            background-color: #e91e63; /* Fondo rosa vibrante */
+            color: #ffffff;            /* Texto totalmente blanco */
+            letter-spacing: 0.5px;
+        }
+
+        a {
             color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Banner Superior Informativo */
+        .top-bar {
+            background-color: #c2185b;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+
+        /* Encabezado / Navegación Estilo Stradivarius */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #e91e63;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Sección Hero Editorial */
+        .hero {
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn-main {
+            border: 1px solid #ffffff;
+            background: transparent;
+            color: #ffffff;
+            padding: 12px 35px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-main:hover {
+            background-color: #ffffff;
+            color: #e91e63;
+        }
+
+        /* Contenido Principal / Grid Lookbook */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .grid-lookbook {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 13px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Sección de Vídeo Integrado (YouTube) */
+        .video-section {
+            text-align: center;
+            margin: 80px 0 40px 0;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Pie de página Minimalista */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Adaptabilidad Móvil */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
         }
     </style>
-    <div style="text-align: center; margin: 40px 0;">
-    <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/OF1MJmKJ9KQ" 
-        title="Reproductor de vídeo de YouTube" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
-</div>
 </head>
+<body>
+
+    <!-- Bar de Novedades -->
+    <div class="top-bar">
+        Novedades Informática | Cynthia Rodríguez
+    </div>
+
+    <!-- Navegación -->
+    <header>
+        <div class="logo">CYNTHIA</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#video">Vídeo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero / Portada -->
+    <section class="hero" id="inicio">
+        <h1>CYNTHIA INFORMÁTICA</h1>
+        <p>Diseño, desarrollo y proyectos tecnológicos en formato editorial</p>
+        <button class="btn-main" onclick="document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'})">Descubrir</button>
+    </section>
+
+    <!-- Proyectos en Cuadrícula -->
+    <main class="container" id="proyectos">
+        <h2 class="section-title">Colección de Proyectos</h2>
+        
+        <div class="grid-lookbook">
+            <div class="card">
+                <h3>01. Desarrollo Web</h3>
+                <p>Maquetación moderna, interfaces limpias y experiencia de usuario adaptada a dispositivos móviles.</p>
+            </div>
+            <div class="card">
+                <h3>02. Sistemas y Redes</h3>
+                <p>Configuración, mantenimiento y optimización de entornos informáticos.</p>
+            </div>
+            <div class="card">
+                <h3>03. Programación</h3>
+                <p>Resolución de problemas con lógica eficiente y estructuras de código organizadas.</p>
+            </div>
+        </div>
+
+        <!-- Sección Vídeo de YouTube al final -->
+        <section class="video-section" id="video">
+            <h2 class="section-title">Contenido Destacado</h2>
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/OF1MJmKJ9KQ" 
+                    title="Reproductor de vídeo de YouTube" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Cynthia Informática. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
 </html>
