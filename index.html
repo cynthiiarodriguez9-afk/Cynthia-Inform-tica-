@@ -3,110 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cynthia Informática | Stradivarius Style</title>
+    <title>Cynthia Informática | Estética Stradivarius</title>
     <style>
-        /* Reset y Estilos Globales */
+        /* Reset y Estilos Inspirados en Stradivarius */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Neue-Helvetica', Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #e91e63; /* Fondo rosa vibrante */
-            color: #ffffff;            /* Texto totalmente blanco */
-            letter-spacing: 0.5px;
+            background-color: #ffffff;
+            color: #000000;
+            letter-spacing: 0.8px;
+            -webkit-font-smoothing: antialiased;
         }
 
         a {
-            color: #ffffff;
+            color: #000000;
             text-decoration: none;
         }
 
-        /* Banner Superior Informativo */
-        .top-bar {
-            background-color: #c2185b;
+        /* Banner Superior Fino */
+        .top-banner {
+            background-color: #000000;
+            color: #ffffff;
             text-align: center;
-            padding: 8px 15px;
-            font-size: 11px;
+            padding: 7px 15px;
+            font-size: 10px;
             text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            font-weight: 500;
         }
 
-        /* Encabezado / Navegación Estilo Stradivarius */
+        /* Encabezado Principal */
         header {
             position: sticky;
             top: 0;
-            background-color: #e91e63;
+            background-color: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px 50px;
+            border-bottom: 1px solid #f2f2f2;
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 24px;
+        .brand-logo {
+            font-size: 26px;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 35px;
         }
 
         nav a {
-            font-size: 13px;
+            font-size: 11px;
             text-transform: uppercase;
             font-weight: 600;
-            letter-spacing: 1px;
-            transition: opacity 0.3s;
+            letter-spacing: 1.5px;
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
-            opacity: 0.7;
+            color: #767676;
         }
 
-        /* Sección Hero Editorial */
-        .hero {
-            height: 75vh;
+        /* Hero / Portada Estilo Editorial Moda */
+        .hero-section {
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: #fafafa;
+            border-bottom: 1px solid #f2f2f2;
         }
 
-        .hero h1 {
-            font-size: 48px;
+        .hero-section h1 {
+            font-size: 42px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
+            letter-spacing: 5px;
+            margin-bottom: 12px;
         }
 
-        .hero p {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .btn-main {
-            border: 1px solid #ffffff;
-            background: transparent;
-            color: #ffffff;
-            padding: 12px 35px;
+        .hero-section p {
             font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #555555;
+            margin-bottom: 35px;
+        }
+
+        .btn-stradi {
+            border: 1px solid #000000;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 14px 40px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
@@ -114,78 +117,81 @@
             transition: all 0.3s ease;
         }
 
-        .btn-main:hover {
+        .btn-stradi:hover {
             background-color: #ffffff;
-            color: #e91e63;
+            color: #000000;
         }
 
-        /* Contenido Principal / Grid Lookbook */
-        .container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
+        /* Catálogo de Proyectos / Lookbook Grid */
+        .main-container {
+            max-width: 1280px;
+            margin: 70px auto;
+            padding: 0 30px;
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
-            font-size: 20px;
+            font-size: 16px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 40px;
+            letter-spacing: 3.5px;
+            margin-bottom: 50px;
             font-weight: 700;
         }
 
         .grid-lookbook {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
-        .card {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 25px;
+        .lookbook-item {
+            border: 1px solid #e5e5e5;
+            padding: 35px 25px;
+            background-color: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease;
+            transition: border-color 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .lookbook-item:hover {
+            border-color: #000000;
         }
 
-        .card h3 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
+        .lookbook-item h3 {
             font-size: 13px;
-            line-height: 1.6;
-            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
-        /* Sección de Vídeo Integrado (YouTube) */
-        .video-section {
+        .lookbook-item p {
+            font-size: 12px;
+            line-height: 1.7;
+            color: #666666;
+            letter-spacing: 0.3px;
+        }
+
+        /* Sección de Vídeo Integrado */
+        .video-container-section {
             text-align: center;
-            margin: 80px 0 40px 0;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 90px 0 50px 0;
+            padding-top: 50px;
+            border-top: 1px solid #eaeaea;
         }
 
-        .video-wrapper {
+        .video-embed-box {
             position: relative;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            max-width: 800px;
-            margin: 20px auto 0 auto;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-width: 850px;
+            margin: 30px auto 0 auto;
+            border: 1px solid #e5e5e5;
         }
 
-        .video-wrapper iframe {
+        .video-embed-box iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -193,26 +199,59 @@
             height: 100%;
         }
 
-        /* Pie de página Minimalista */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 40px 20px;
+        /* Enlace a la tienda */
+        .stradivarius-direct-link {
             text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background-color: #fcfcfc;
+            border: 1px solid #ededed;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            margin-top: 15px;
+            border: 1px solid #000000;
+            background: transparent;
+            color: #000000;
+            padding: 12px 30px;
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        /* Adaptabilidad Móvil */
-        @media (max-width: 768px) {
+        .btn-outline:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* Pie de página */
+        footer {
+            border-top: 1px solid #eaeaea;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888888;
+        }
+
+        /* Responsive Móvil */
+        @media (max-width: 900px) {
+            .grid-lookbook {
+                grid-template-columns: 1fr;
+            }
+            
             header {
                 flex-direction: column;
                 gap: 15px;
-                padding: 15px 20px;
+                padding: 20px;
             }
 
-            .hero h1 {
-                font-size: 32px;
+            .hero-section h1 {
+                font-size: 30px;
             }
         }
     </style>
@@ -220,67 +259,5 @@
 <body>
 
     <!-- Bar de Novedades -->
-    <div class="top-bar">
-        Novedades Informática | Cynthia Rodríguez
-    </div>
-
-    <!-- Navegación -->
-    <header>
-        <div class="logo">CYNTHIA</div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#video">Vídeo</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero / Portada -->
-    <section class="hero" id="inicio">
-        <h1>CYNTHIA INFORMÁTICA</h1>
-        <p>Diseño, desarrollo y proyectos tecnológicos en formato editorial</p>
-        <button class="btn-main" onclick="document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'})">Descubrir</button>
-    </section>
-
-    <!-- Proyectos en Cuadrícula -->
-    <main class="container" id="proyectos">
-        <h2 class="section-title">Colección de Proyectos</h2>
-        
-        <div class="grid-lookbook">
-            <div class="card">
-                <h3>01. Desarrollo Web</h3>
-                <p>Maquetación moderna, interfaces limpias y experiencia de usuario adaptada a dispositivos móviles.</p>
-            </div>
-            <div class="card">
-                <h3>02. Sistemas y Redes</h3>
-                <p>Configuración, mantenimiento y optimización de entornos informáticos.</p>
-            </div>
-            <div class="card">
-                <h3>03. Programación</h3>
-                <p>Resolución de problemas con lógica eficiente y estructuras de código organizadas.</p>
-            </div>
-        </div>
-
-        <!-- Sección Vídeo de YouTube al final -->
-        <section class="video-section" id="video">
-            <h2 class="section-title">Contenido Destacado</h2>
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/OF1MJmKJ9KQ" 
-                    title="Reproductor de vídeo de YouTube" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </section>
-    </main>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2026 Cynthia Informática. Todos los derechos reservados.</p>
-    </footer>
-
-</body>
-</html>
+    <div class="top-banner">
+        Env
