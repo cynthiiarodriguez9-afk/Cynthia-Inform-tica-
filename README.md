@@ -1,2 +1,2 @@
 # Cynthia-Inform-tica-
-Proyecto demostración página web del proyecto de victimización 
+Proyecto demostración página web del proyecto de victimización secundaria 
